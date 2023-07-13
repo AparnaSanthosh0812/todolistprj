@@ -1,0 +1,29 @@
+{% extends 'todo/main.html'%}
+
+{%block content %}
+
+<div class="header-bar">
+    <h1>Register Here</h1>
+</div>
+<div class="card-body">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="inputUsername" class="form-label">Username</label>
+            <input name="username" type="text" class="form-control" id="inputUsername" required>
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input name="password1" type="password" class="form-control" id="inputPassword" required>
+          </div>
+          <div class="mb-3">
+            <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+            <input name="password2" type="password" class="form-control" id="inputConfirmPassword" required>
+          </div>
+        <br><br>
+        <input class="button" type="submit" value="Register Now">
+        <small><p>Do You Have An Account Already ?<a href="{% url 'login' %}"> Login Now </a></p> </small>
+     
+    </form>
+</div>
+{%endblock content%}
